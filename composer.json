@@ -1,0 +1,19 @@
+{
+    "name": "silex/newsletter-api",
+    "description": "Newsletter API module for Magento 2",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "require": {
+        "magento/framework": "^103",
+        "magento/module-newsletter": "^100.4"
+    },
+    "license": "GPL-3.0",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Silex\\NewsletterApi\\": ""
+        }
+    }
+}

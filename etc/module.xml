@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Created by HOMEMADE.IO SAS.
+  ~ Splio Sync  -  Connect Splio with your Magento
+  ~
+  ~ Copyright (C) HOMEMADE.IO SAS, Inc - All Rights Reserved
+  ~
+  ~ @author    Simon Laubet-Xavier <simon.laubetxavier@home-made.io>
+  ~ @copyright 2022-2023 HOMEMADE.IO SAS
+  ~ @date      2023-09-27
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Silex_NewsletterApi" setup_version="1.0.0">
+        <sequence>
+            <module name="Magento_Framework"/>
+            <module name="Magento_Newsletter"/>
+        </sequence>
+    </module>
+</config>
