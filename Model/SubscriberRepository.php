@@ -43,7 +43,7 @@ class SubscriberRepository implements SubscriberRepositoryInterface
         SubscriberFactory    $subscriberFactory,
         CollectionFactory    $collectionFactory,
         SearchResultsFactory $searchResultsFactory,
-        CollectionProcessor  $collectionProcessor = null,
+        CollectionProcessor  $collectionProcessor = null
     ) {
         $this->resource = $resource;
         $this->subscriberFactory = $subscriberFactory;
