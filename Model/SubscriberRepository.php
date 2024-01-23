@@ -2,7 +2,6 @@
 
 namespace Silex\NewsletterApi\Model;
 
-use Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor;
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface as CollectionProcessor;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Api\SearchResultsInterface;
@@ -49,7 +48,8 @@ class SubscriberRepository implements SubscriberRepositoryInterface
         $this->subscriberFactory = $subscriberFactory;
         $this->collectionFactory = $collectionFactory;
         $this->searchResultsFactory = $searchResultsFactory;
-        $this->collectionProcessor = $collectionProcessor ?: $this->getCollectionProcessor();
+        $this->collectionProcessor = $collectionProcessor
+            ?: ObjectManager::getInstance()->get(CollectionProcessor::class);
     }
 
     /**
@@ -81,21 +81,5 @@ class SubscriberRepository implements SubscriberRepositoryInterface
         $searchResults->setTotalCount($collection->getSize());
 
         return $searchResults;
-    }
-
-    /**
-     * Retrieve collection processor
-     *
-     * @deprecated
-     *
-     * @return CollectionProcessor
-     */
-    private function getCollectionProcessor(): CollectionProcessor
-    {
-        if (!$this->collectionProcessor) {
-            $this->collectionProcessor = ObjectManager::getInstance()->get(FilterProcessor::class);
-        }
-
-        return $this->collectionProcessor;
     }
 }
