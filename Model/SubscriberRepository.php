@@ -17,13 +17,15 @@ use Silex\NewsletterApi\Api\Data\SubscriberSearchResultsInterfaceFactory as Sear
  * Class SubscriberRepository
  *
  * Repository class for newsletter subscriber
+ *
+ * phpcs:disable Magento2.Commenting.ClassPropertyPHPDocFormatting.Missing
  */
 class SubscriberRepository implements SubscriberRepositoryInterface
 {
-    protected ResourceModel $resource;
-    protected SubscriberFactory $subscriberFactory;
-    protected CollectionFactory $collectionFactory;
-    protected SearchResultsFactory $searchResultsFactory;
+    private ResourceModel $resource;
+    private SubscriberFactory $subscriberFactory;
+    private CollectionFactory $collectionFactory;
+    private SearchResultsFactory $searchResultsFactory;
 
     /** @var CollectionProcessor $collectionProcessor */
     private $collectionProcessor;
@@ -42,7 +44,7 @@ class SubscriberRepository implements SubscriberRepositoryInterface
         SubscriberFactory    $subscriberFactory,
         CollectionFactory    $collectionFactory,
         SearchResultsFactory $searchResultsFactory,
-        CollectionProcessor  $collectionProcessor = null
+        ?CollectionProcessor $collectionProcessor = null
     ) {
         $this->resource = $resource;
         $this->subscriberFactory = $subscriberFactory;
