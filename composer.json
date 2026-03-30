@@ -15,5 +15,9 @@
         "psr-4": {
             "Silex\\NewsletterApi\\": ""
         }
-    }
+    },
+    "abandoned": true,
+    "_comment": [
+        "Unnecessary addition, as subscriber model, resource and collection are declared as API in Magento 2"
+    ]
 }
